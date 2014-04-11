@@ -10,20 +10,45 @@ import java.util.ArrayList;
  */
 public class ReverseWords {
     ArrayList al = new ArrayList();
-    int cont=0;
-    public void getWords(String userInput){
-        for (int i = userInput.indexOf("\r\n"); i != -1; userInput.indexOf("\r\n"+1)) {
-            al.add(cont, userInput.substring(0,userInput.indexOf("\r\n")));
-            userInput = userInput.substring(userInput.indexOf("\r\n")+1);
-            System.out.println(al.get(cont));
-            cont++;
-        }
-        System.out.println(al.get(0));
+    int numCases = 0;
+    String phrases;
+
+    public void enter(String userInput){
+      numCases = Integer.parseInt(userInput.substring(0, userInput.indexOf(" ")));
+      phrases = userInput.substring(userInput.indexOf(" "+1));
+      cutLines(phrases);
+
     }
 
-    private void cases() {
-        System.out.println(al.get(0));
+    private void cutLines(String phrases){
+      while (numCases !=0){
+          for (int i = 0; i <= 0; i++) {
+              al.set(i, phrases.substring(0, phrases.indexOf(" ")));
+              phrases = phrases.substring(phrases.indexOf(" "+1));
+              System.out.println(phrases+"_______"+al.get(i));
+          }
+
+          numCases--;
+      }
     }
+
+    private void reverseWords(String line){
+
+    }
+
+//    public void getWords(String userInput){
+//        for (int i = userInput.indexOf("\r\n"); i != -1; userInput.indexOf("\r\n"+1)) {
+//            al.add(cont, userInput.substring(0,userInput.indexOf("\r\n")));
+//            userInput = userInput.substring(userInput.indexOf("\r\n")+1);
+//            System.out.println(al.get(cont));
+//            cont++;
+//        }
+//        System.out.println(al.get(0));
+//    }
+//
+//    private void cases() {
+//        System.out.println(al.get(0));
+//    }
 
 }
 

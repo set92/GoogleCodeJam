@@ -12,6 +12,6 @@ public class Main {
                 "this is a test\r\n" +
                 "foobar\r\n" +
                 "all your base";
-        rw.getWords(userInput);
+        rw.enter(userInput);
     }
 }
