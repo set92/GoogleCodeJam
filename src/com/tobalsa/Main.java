@@ -1,5 +1,6 @@
 package com.tobalsa;
 
+import com.tobalsa.QualificationRound2014.CookieClickerAlpha;
 import com.tobalsa.QualificationRound2014.MagicTrick;
 import com.tobalsa.africa2010.ReverseWords;
 
@@ -17,10 +18,10 @@ public class Main {
 //                "foobar\r\n" +
 //                "all your base";
 //        rw.enter(userInput);
-        MagicTrick mt = new MagicTrick();
+        CookieClickerAlpha mt = new CookieClickerAlpha();
         try {
             mt.enter(readFile(System.getProperty("user.dir")+
-                    "/src/com/tobalsa/QualificationRound2014/MagicTrick_Small.in", StandardCharsets.UTF_8));
+                    "/src/com/tobalsa/QualificationRound2014/CookieClickerAlpha.in", StandardCharsets.UTF_8));
         } catch (IOException e) {
             e.printStackTrace();
         }

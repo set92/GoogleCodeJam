@@ -82,4 +82,67 @@ package com.tobalsa.QualificationRound2014;
  Cookie Clicker was created by Orteil. Orteil does not endorse and has no involvement with Google Code Jam.
  */
 public class CookieClickerAlpha {
+    private int numberCases = 0;
+    private double cookies = 0, cookiesOfFarm = 0, rateCookies = 2.0, rateOfCookiesOfFarm = 0,
+            limitAmountCookies = 0, time = 0.0;
+    private String userInputMod;
+
+    public void enter(String userInput){
+        int cases = 1;
+        numberCases = Integer.parseInt(userInput.substring(0, userInput.indexOf("\n")));
+        userInput = userInput.substring(userInput.indexOf("\n")+1);
+        userInputMod = userInput;
+
+        while(numberCases!=0) {
+            cutLines();
+
+            sumarGalletas();
+            System.out.println("Case #"+cases+": "+time);
+
+            cases++;
+            numberCases--;
+        }
+    }
+
+    private void cutLines() {
+        cookiesOfFarm = Float.parseFloat(userInputMod.substring(0, userInputMod.indexOf(" "))) ;//Granja cuesta C
+        userInputMod = userInputMod.substring(userInputMod.indexOf(" ")+1);
+
+        rateOfCookiesOfFarm = Float.parseFloat(userInputMod.substring(0, userInputMod.indexOf(" ")));//granja da F galletas
+        userInputMod = userInputMod.substring(userInputMod.indexOf(" ")+1);
+
+        if (numberCases == 1){
+            limitAmountCookies = Float.parseFloat(userInputMod.substring(0));//Meta de galletas
+            userInputMod = userInputMod.substring(userInputMod.indexOf(" ") + 1);
+        }else{
+            limitAmountCookies = Float.parseFloat(userInputMod.substring(0, userInputMod.indexOf("\n")));//Meta de galletas
+            userInputMod = userInputMod.substring(userInputMod.indexOf("\n") + 1);
+        }
+    }
+
+    private void sumarGalletas() {
+        int cont=0;
+        cookies = 0;rateCookies = 2;time = 0;
+        while (cookies < limitAmountCookies) {
+            time = time + 1;
+            cookies = cookies + rateCookies;
+            if (cookies >= cookiesOfFarm && rateCookies < 14 && cont!=3) {
+                cookies -= cookiesOfFarm;
+                rateCookies += rateOfCookiesOfFarm;
+                cont++;
+            }
+        }
+
+    }
+
+//    private void sumarGalletas() {
+//        while(limitAmountCookies/rateCookies > cookiesOfFarm/rateCookies + limitAmountCookies/(rateCookies + rateOfCookiesOfFarm)) {
+//            time = time + cookiesOfFarm/rateCookies;
+//            rateCookies += rateOfCookiesOfFarm;
+//        }
+//
+//        time = time + limitAmountCookies /rateCookies;
+//
+//    }
+
 }

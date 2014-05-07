@@ -89,9 +89,9 @@ package com.tobalsa.QualificationRound2014;
  Case #3: Volunteer cheated!
  */
 public class MagicTrick {
-    int[][] cards = new int[4][4];
-    int [] possibleCards = new int[4];
-    int [] possibleCards2 = new int[4];
+    private int[][] cards = new int[4][4];
+    private int [] possibleCards = new int[4];
+    private int [] possibleCards2 = new int[4];
     private int numberCases = 0, rowCard = 0, userCard, times = 0;
     private String userInputMod;
     private boolean flagSecondTime;

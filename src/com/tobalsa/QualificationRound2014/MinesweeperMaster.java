@@ -98,4 +98,7 @@ package com.tobalsa.QualificationRound2014;
 
  */
 public class MinesweeperMaster {
+
+
+
 }
