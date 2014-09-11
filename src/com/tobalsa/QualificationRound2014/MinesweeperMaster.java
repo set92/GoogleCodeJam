@@ -99,6 +99,57 @@ package com.tobalsa.QualificationRound2014;
  */
 public class MinesweeperMaster {
 
+    String lineas;
+    public void enter(String userInput){
+        int numberCases = Integer.parseInt(userInput.substring(0,userInput.indexOf("\n")));
+        lineas = userInput.substring(userInput.indexOf("\n")+1);
+
+        while (numberCases >= 1){
+            int[] partes= methodAsignar(lineas, numberCases);
+            methodGenerarCampo(partes[0],partes[1],partes[2]);
+
+
+            numberCases--;
+        }
+
+    }
+
+    private void methodGenerarCampo(int filas, int columnas, int minas) {
+        char campo[][] = new char[filas][columnas];
+        fillCampo(campo);
+        showCampo(campo);
+    }
+
+    private void fillCampo(char[][] campo){
+        for (int i = 0; i < campo.length; i++) {
+            for (int j = 0; j < campo[i].length; j++) {
+                campo[i][j]='.';
+            }
+        }
+    }
+    private void showCampo(char[][] campo){
+        for (int i = 0; i < campo.length; i++) {
+            for (int j = 0; j < campo[i].length; j++) {
+                System.out.print(campo[i][j]+" ");
+            }
+            System.out.println("");
+        }
+    }
+    private int[] methodAsignar(String lineas, int numberCases) {
+        int[] parts= new int[3];
+        for (int i = 0; i <= 2; i++) {
+            if (i==2 & numberCases!=1) {
+                parts[i] = Integer.parseInt(this.lineas.substring(0, this.lineas.indexOf("\n")));
+                this.lineas = this.lineas.substring(this.lineas.indexOf("\n") + 1);
+            } else if(i==2 & numberCases==1){
+                parts[i] = Integer.parseInt(this.lineas.substring(0));
+            }else {
+                parts[i] = Integer.parseInt(this.lineas.substring(0, this.lineas.indexOf(" ")));
+                this.lineas = this.lineas.substring(this.lineas.indexOf(" ") + 1);
+            }
+        }
+        return parts;
+    }
 
 
 }

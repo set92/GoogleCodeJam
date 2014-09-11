@@ -2,6 +2,7 @@ package com.tobalsa;
 
 import com.tobalsa.QualificationRound2014.CookieClickerAlpha;
 import com.tobalsa.QualificationRound2014.MagicTrick;
+import com.tobalsa.QualificationRound2014.MinesweeperMaster;
 import com.tobalsa.africa2010.ReverseWords;
 
 import java.io.IOException;
@@ -18,10 +19,10 @@ public class Main {
 //                "foobar\r\n" +
 //                "all your base";
 //        rw.enter(userInput);
-        CookieClickerAlpha mt = new CookieClickerAlpha();
+        MinesweeperMaster mt = new MinesweeperMaster();
         try {
             mt.enter(readFile(System.getProperty("user.dir")+
-                    "/src/com/tobalsa/QualificationRound2014/CookieClickerAlpha.in", StandardCharsets.UTF_8));
+                    "/src/com/tobalsa/QualificationRound2014/MinesweeperMaster.in", StandardCharsets.UTF_8));
         } catch (IOException e) {
             e.printStackTrace();
         }
